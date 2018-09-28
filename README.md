@@ -1,3 +1,10 @@
 # HR adecuado a MASCOOP 
-Licenia GPL-3
+Licencia GPL-3
+Basado en Odoo 11
+
+# Several forked projects.
+## special credits to:
+Cybrosis
+Ivan Yalisarief
+
 
