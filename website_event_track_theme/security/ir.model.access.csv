@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_event_track_type_manager,event.track.type manager,model_event_track_type,event.group_event_manager,1,1,1,1
+access_event_track_theme_manager,event.track.theme manager,model_event_track_theme,event.group_event_manager,1,1,1,1
+,event.track.participant manager,website_event_track_theme.model_event_track_participant,event.group_event_manager,1,1,1,1
+access_event_track_type_user,event.track.type public,model_event_track_type,event.group_event_user,1,0,0,0
+access_event_track_theme_user,event.track.theme public,model_event_track_theme,event.group_event_user,1,0,0,0
+access_event_track_participant_user,event.track.participant public,website_event_track_theme.model_event_track_participant,event.group_event_user,1,1,1,1
+access_event_track_type_portal,event.track.type public,model_event_track_type,base.group_portal,1,0,0,0
+access_event_track_theme_portal,event.track.theme public,model_event_track_theme,base.group_portal,1,0,0,0
+access_event_track_participant_portal,event.track.participant public,website_event_track_theme.model_event_track_participant,base.group_portal,1,1,1,1

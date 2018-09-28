@@ -1,2 +1,3 @@
-# mascoop
-Odoo addons para mascoop
+# HR adecuado a MASCOOP 
+Licenia GPL-3
+

@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<odoo>
+
+        <!-- Event Tracks -->
+        <record model="ir.ui.view" id="view_event_track_theme_form">
+            <field name="name">event.track.form</field>
+            <field name="model">event.track</field>
+             <field name="priority">10</field>
+            <field name="inherit_id" ref="website_event_track.view_event_track_form"/>
+          <!--  <field name="inherit_id" ref="view_event_track_theme_form_portal"/> -->
+            <field name="arch" type="xml">
+                <xpath expr="//header/field[@name='stage_id']" position="attributes">
+                <attribute name="attrs">{'groups':'event.group_event_user'}</attribute>
+              </xpath>
+              <xpath expr="//sheet/div[@class='oe_button_box']" position="attributes">
+                <attribute name="attrs">{'groups':'event.group_event_user'}</attribute>
+              </xpath>
+              <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="product_id" />
+                <field name="partner_id_name" placeholder="...Ingrese su Cédula, Pasaporte, DNI u otro"/>
+               <field name="partner_company_name" placeholder="Nombre de Institución o Universidad"/>
+               <field name="country_id" placeholder="Nacionalidad"/>
+                  <field name="resumen" placeholder="...Resumen de hasta 500 palabras..."/>
+              </xpath>
+              <xpath expr="//field[@name='partner_phone']" position="after">
+                    <field name="type_id"/>
+                    <field name="is_moderator"/>
+                    <field name="theme_tag"/>
+                   <field name="final_tag_id"/>
+                  <field name="image" widget="image"/>
+                   <field name="adjunto"  filename="file_name"
+                     attrs="{'invisible': [('type_id','!=',2)]}"/>
+                    <field name="file_name" invisible="1"/>
+                    <field name="is_table" attrs="{'invisible': True}"/>
+                    <notebook >
+                      <page string="Participantes" attrs="{'invisible' : [('is_table', '=', False)]}">
+                        <field name="partners_ids"/>
+                      </page>
+                    </notebook>
+
+              </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="event_track_participant_tree_view">
+           <field name="name">partners_ids.tree</field>
+           <field name="model">event.track.participant</field>
+           <field name="arch" type="xml">
+               <tree string="Participantes de la Mesa de Trabajo" editable="bottom">
+                   <field name="partner_id"/>
+                   <field name="partner_track_id"/>
+               </tree>
+
+           </field>
+       </record>
+
+     <record model="ir.actions.act_window" id="action_view_event_track_theme">
+            <field name="name">Event track Themes</field>
+            <field name="res_model">event.track</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('website_event_track.view_event_track_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('view_event_track_theme_form')})]"/>
+        </record>
+
+    <menuitem
+            id="menu_event_track"
+            name="Ponencias del Evento"
+            action="action_view_event_track_theme"
+            parent="event.event_main_menu"
+            groups="base.group_no_one"/>
+
+          <!-- EVENTS/CONFIGURATION/EVENT theme -->
+        <record model="ir.ui.view" id="view_event_theme_form">
+            <field name="name">Event Themes</field>
+            <field name="model">event.track.theme</field>
+            <field name="arch" type="xml">
+                <form string="Ejes Temáticos">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="group_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_event_theme_tree">
+            <field name="name">Event Location</field>
+            <field name="model">event.track.theme</field>
+            <field name="arch" type="xml">
+                <tree string="Ejes Temáticos" editable="bottom">
+                    <field name="name"/>
+                    <field name="group_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_event_track_theme">
+            <field name="name">Event Themes</field>
+            <field name="res_model">event.track.theme</field>
+        </record>
+
+        <menuitem
+            id="menu_event_track_theme"
+            name="Ejes Temáticos"
+            action="action_event_track_theme"
+            parent="event.menu_event_configuration"/>
+
+          <!-- EVENTS/CONFIGURATION/EVENT Track Type -->
+
+        <record model="ir.ui.view" id="view_event_track_type_form">
+            <field name="name">Proposal Type</field>
+            <field name="model">event.track.type</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de propuestas">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="duration" widget="float_time"/>
+                            <field name="is_poster"/>
+                            <field name="is_table"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_event_track_type_tree">
+            <field name="name">Proposal Type</field>
+            <field name="model">event.track.type</field>
+            <field name="arch" type="xml">
+                <tree string="Tipos de Propuestas">
+                    <field name="name"/>
+                    <field name="duration" widget="float_time"/>
+                    <field name="is_poster"/>
+                    <field name="is_table"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_event_track_type">
+            <field name="name">Typos de Propuestas</field>
+            <field name="res_model">event.track.type</field>
+        </record>
+
+
+        <menuitem
+            id="menu_event_track_type"
+            name="Propuestas"
+            action="action_event_track_type"
+            parent="event.menu_event_configuration"/>
+
+
+        <!-- EVENTS/CONFIGURATION/EVENT Tags -->
+        <record model="ir.ui.view" id="view_event_track_tag_theme_form">
+            <field name="name">Track Tags</field>
+            <field name="model">event.track.tag</field>
+            <field name="inherit_id" ref="website_event_track.view_event_track_tag_form"/>
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='name']" position="after">
+                 <field name="theme_id"/>
+              </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_event_track_tag_theme_tree">
+            <field name="name">Tracks Tag</field>
+            <field name="model">event.track.tag</field>
+            <field name="inherit_id" ref="website_event_track.view_event_track_tag_tree"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='name']" position="after">
+                    <field name="theme_id"/>
+                 </xpath>
+            </field>
+        </record>
+
+</odoo>

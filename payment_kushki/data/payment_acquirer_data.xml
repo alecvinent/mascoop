@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="payment.payment_acquirer_kushki" model="payment.acquirer">
+            <field name="name">Kushki</field>
+            <field name="image" type="base64" file="payment_kushki/static/src/img/kushki_icon.png"/>
+            <field name="provider">kushki</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="view_template_id" ref="kushki_form"/>
+            <field name="registration_view_template_id" ref="kushki_s2s_form"/>
+            <field name="environment">test</field>
+            <field name="pre_msg"><![CDATA[
+<p>You will be prompt with kushki Payment page for payment information.</p>]]></field>
+            <field name="test_private_key">dummy</field>
+            <field name="test_public_key">dummy</field>
+             <field name="prod_private_key">dummy</field>
+            <field name="prod_public_key">dummy</field>
+            <field name="prod_url">dummy</field>
+            <field name="test_url">dummy</field>
+        </record>
+    </data>
+</odoo>

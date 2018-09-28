@@ -1,0 +1,141 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * payment_kushki
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-24 09:00+0000\n"
+"PO-Revision-Date: 2017-10-24 09:00+0000\n"
+"Language-Team: Amharic (https://www.transifex.com/odoo/teams/41243/am/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: am\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: payment_kushki
+#. openerp-web
+#: code:addons/payment_kushki/static/src/xml/kushki_templates.xml:8
+#, python-format
+msgid "&times;"
+msgstr ""
+
+#. module: payment_kushki
+#: model:ir.model.fields,help:payment_kushki.field_payment_acquirer_kushki_image_url
+msgid ""
+"A relative or absolute URL pointing to a square image of your brand or "
+"product. As defined in your kushki profile. See: "
+"https://kushki.com/docs/checkout"
+msgstr ""
+
+#. module: payment_kushki
+#: model:ir.ui.view,arch_db:payment_kushki.kushki_s2s_form
+msgid "CVC"
+msgstr ""
+
+#. module: payment_kushki
+#: model:ir.ui.view,arch_db:payment_kushki.kushki_s2s_form
+msgid "Card number"
+msgstr ""
+
+#. module: payment_kushki
+#: model:ir.ui.view,arch_db:payment_kushki.kushki_s2s_form
+msgid "Cardholder name"
+msgstr ""
+
+#. module: payment_kushki
+#: model:ir.model.fields,field_description:payment_kushki.field_payment_acquirer_kushki_image_url
+msgid "Checkout Image URL"
+msgstr ""
+
+#. module: payment_kushki
+#. openerp-web
+#: code:addons/payment_kushki/static/src/xml/kushki_templates.xml:15
+#, python-format
+msgid "Close"
+msgstr ""
+
+#. module: payment_kushki
+#. openerp-web
+#: code:addons/payment_kushki/static/src/xml/kushki_templates.xml:9
+#, python-format
+msgid "Error"
+msgstr ""
+
+#. module: payment_kushki
+#: model:ir.ui.view,arch_db:payment_kushki.kushki_s2s_form
+msgid "Expires (MM / YY)"
+msgstr ""
+
+#. module: payment_kushki
+#. openerp-web
+#: code:addons/payment_kushki/static/src/js/kushki.js:32
+#, python-format
+msgid "Just one more second, confirming your payment..."
+msgstr ""
+
+#. module: payment_kushki
+#: model:ir.model,name:payment_kushki.model_payment_acquirer
+msgid "Payment Acquirer"
+msgstr ""
+
+#. module: payment_kushki
+#: model:ir.model,name:payment_kushki.model_payment_transaction
+msgid "Payment Transaction"
+msgstr ""
+
+#. module: payment_kushki
+#. openerp-web
+#: code:addons/payment_kushki/static/src/js/kushki.js:57
+#, python-format
+msgid "Payment error"
+msgstr ""
+
+#. module: payment_kushki
+#: code:addons/payment_kushki/models/payment.py:167
+#, python-format
+msgid ""
+"Perhaps the problem can be solved by double-checking your credit card "
+"details, or contacting your bank?"
+msgstr ""
+
+#. module: payment_kushki
+#: model:ir.model.fields,field_description:payment_kushki.field_payment_acquirer_kushki_publishable_key
+msgid "kushki Publishable Key"
+msgstr ""
+
+#. module: payment_kushki
+#: model:ir.model.fields,field_description:payment_kushki.field_payment_acquirer_kushki_secret_key
+msgid "kushki Secret Key"
+msgstr ""
+
+#. module: payment_kushki
+#: code:addons/payment_kushki/models/payment.py:165
+#, python-format
+msgid "kushki gave us the following info about the problem: '%s'"
+msgstr ""
+
+#. module: payment_kushki
+#: code:addons/payment_kushki/models/payment.py:177
+#, python-format
+msgid "kushki: %s orders found for reference %s"
+msgstr ""
+
+#. module: payment_kushki
+#: code:addons/payment_kushki/models/payment.py:173
+#, python-format
+msgid "kushki: no order found for reference %s"
+msgstr ""
+
+#. module: payment_kushki
+#: code:addons/payment_kushki/models/payment.py:163
+#, python-format
+msgid "We're sorry to report that the transaction has failed."
+msgstr ""
+
+#. module: payment_kushki
+#: model:ir.model,name:payment_kushki.model_payment_token
+msgid "payment.token"
+msgstr ""

@@ -1,0 +1,97 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cms_account_form
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"X-Generator: Poedit 1.8.5\n"
+"Last-Translator: \n"
+"Language: es_ES\n"
+
+#. module: cms_account_form
+#: model:ir.ui.view,arch_db:cms_account_form.email_field_update_warning
+msgid ""
+"<strong>If you modify your email, your login will be updated as well.</"
+"strong><br/>\n"
+"      You'll be logged out and a confirmation email will be sent to the new "
+"address."
+msgstr ""
+"<strong>Si cambia su email, deberá usar el nuevo mail para ingresar al "
+"sistema.</strong><br/>\n"
+"      Daremos fin a esta sesión y enviaremos un email para confirmar su "
+"nueva dirección. Gracias."
+
+#. module: cms_account_form
+#: model:ir.model.fields,field_description:cms_account_form.field_cms_form_my_account_display_name
+msgid "Display Name"
+msgstr "Nombre "
+
+#. module: cms_account_form
+#: code:addons/cms_account_form/models/account_form.py:129
+#, python-format
+msgid "Email address `%s` already taken."
+msgstr "Ya existe el mail %s en el sistema."
+
+#. module: cms_account_form
+#: model:ir.model.fields,field_description:cms_account_form.field_cms_form_my_account_id
+msgid "ID"
+msgstr ""
+
+#. module: cms_account_form
+#: code:addons/cms_account_form/models/account_form.py:147
+#, python-format
+msgid "Important"
+msgstr "Importante"
+
+#. module: cms_account_form
+#: code:addons/cms_account_form/models/account_form.py:63
+#, python-format
+msgid "Invalid Email! Please enter a valid email address."
+msgstr "Email inválido. Ingrese un email válido por favor."
+
+#. module: cms_account_form
+#: model:ir.model.fields,field_description:cms_account_form.field_cms_form_my_account___last_update
+msgid "Last Modified on"
+msgstr "Última modificación"
+
+#. module: cms_account_form
+#: code:addons/cms_account_form/models/account_form.py:41
+#, python-format
+msgid "My account"
+msgstr "Mi cuenta"
+
+#. module: cms_account_form
+#: code:addons/cms_account_form/models/account_form.py:45
+#, python-format
+msgid "Profile updated."
+msgstr "Perfil actualizado"
+
+#. module: cms_account_form
+#: code:addons/cms_account_form/models/account_form.py:128
+#, python-format
+msgid "Warning"
+msgstr "ATención"
+
+#. module: cms_account_form
+#: code:addons/cms_account_form/models/account_form.py:148
+#, python-format
+msgid ""
+"Your login username has changed to: `%s`. An email has been sent to verify "
+"it. You will be asked to reset your password."
+msgstr ""
+"Su login ha sido cambiado a: `%s`.Recibirá un email de confirmación para "
+"cambio de clave."
+
+#. module: cms_account_form
+#: model:ir.model,name:cms_account_form.model_cms_form_my_account
+msgid "cms.form.my.account"
+msgstr ""
