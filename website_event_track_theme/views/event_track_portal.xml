@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<odoo>
+
+
+   <record model="ir.actions.act_window" id="action_event_track_portal">
+            <field name="name">Propuestas para el Evento</field>
+            <field name="res_model">event.track</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('website_event_track.view_event_track_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('view_event_track_theme_form')})]"/>
+       <field name="context"> {'form_view_initial_mode': 'edit', 'force_detailed_view': 'true'}</field>
+       <field name="domain">['|',('create_uid','=', uid),('user_id.id','=', uid)]</field>
+            <field name="help" type="html">
+
+                <p class="oe_view_nocontent_create">
+                Agregue una propuesta.
+                </p><p>
+                    Su propuesta, puede ser una ponencia, un poster o una Mesa de Trabajo.
+                </p>
+            </field>
+        </record>
+
+
+     <menuitem
+            id="menu_event_track_portal"
+            name="Mis Propuestas"
+            action="action_event_track_portal"
+            />
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="acquirer_form_kushki" model="ir.ui.view">
+        <field name="name">payment.acquirer.form.inherit</field>
+        <field name="model">payment.acquirer</field>
+        <field name="inherit_id" ref="payment.acquirer_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//group[@name="acquirer"]' position='after'>
+                <group attrs="{'invisible': [('provider', '!=', 'kushki')]}">
+                    <field name="test_private_key" password="True"/>
+                    <field name="test_public_key" password="True"/>
+                    <field name="test_url"/>
+                    <field name="prod_private_key" password="True"/>
+                    <field name="prod_public_key" password="True"/>
+                    <field name="prod_url"/>
+                </group>
+            </xpath>
+            <xpath expr='//group[@name="acquirer_config"]' position='after'>
+                <group attrs="{'invisible': [('provider', '!=', 'kushki')]}">
+                    <field name="kushki_image_url"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
