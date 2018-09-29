@@ -10,7 +10,7 @@ class MCDepartment(models.Model):
     _rec_name = 'mc_complete_name'
 
     @api.depends('name', 'parent_id.complete_name')
-      def _compute_complete_name(self):
-          for department in self:
-          if department.name:
-            department.complete_name = department.name
+    def _compute_complete_name(self):
+        for department in self:
+            if department.name:
+                department.complete_name = department.name
