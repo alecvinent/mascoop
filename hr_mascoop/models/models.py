@@ -4,9 +4,7 @@ from odoo import models, fields, api
 
 class MCDepartment(models.Model):
     _name = "hr.department"
-    _description = "HR Department"
     _inherit = 'hr.department'
-    _rec_name = 'mc_complete_name'
 
     @api.depends('name', 'parent_id.complete_name')
     def _compute_complete_name(self):
