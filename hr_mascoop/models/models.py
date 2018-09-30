@@ -5,8 +5,7 @@ from odoo import models, fields, api
 class MCDepartment(models.Model):
     _name = "hr.department"
     _description = "HR Department"
-    _inherit = ['mail.thread']
-    _order = "name"
+    _inherit = 'hr.department'
     _rec_name = 'mc_complete_name'
 
     @api.depends('name', 'parent_id.complete_name')
