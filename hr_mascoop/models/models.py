@@ -6,7 +6,7 @@ class MCDepartment(models.Model):
     _name = "hr.department"
     _inherit = 'hr.department'
 
-    @api.depends('name', 'parent_id.complete_name')
+    @api.depends('name', 'complete_name')
     def _compute_complete_name(self):
         for department in self:
             if department.name:

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_hr_multa_form">
+            <field name="name">hr.multa.form</field>
+            <field name="model">hr.multa</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Multa" version="7.0">
+                    <group>
+                        <field name="name" />
+                        <field name="employee_id" />
+                        <field name="date" />
+                        <field name="total" />
+                        <field name="state" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_hr_multa_tree" model="ir.ui.view">
+            <field name="name">hr.multa.tree</field>
+            <field name="model">hr.multa</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Multas">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="date"/>
+                    <field name="total"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem id="menu_hr_multas" parent="hr.menu_hr_root"
+                  name="Multas"/>
+
+        <record model="ir.actions.act_window" id="action_view_multas">
+            <field name="name">View Multas</field>
+            <field name="res_model">hr.multa</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_view_multas" parent="menu_hr_multas"
+                  name="View Multas" action="action_view_multas"/>
+
+    </data>
+
+</odoo>

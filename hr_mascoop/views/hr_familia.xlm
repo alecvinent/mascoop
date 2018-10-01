@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_family_item_tree">
+			<field name="name">hr.family.item.view.tree</field>
+			<field name="model">hr.family.item</field>
+			<field name="arch" type="xml">
+				<tree string="Family Members" version="7.0">
+					<field name="name" select="1" />
+					<field name="relationship" />
+					<field name="birth" />
+					<field name="age" />
+					<field name="sex" />
+					<field name="disabled" />
+					<field name="tutela" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_hr_family_item_form">
+			<field name="name">hr.family.item</field>
+			<field name="model">hr.family.item</field>
+			<field name="arch" type="xml">
+				<form string="Family Members" version="7.0">
+					<group>
+						<group>
+							<field name="name" select="1" />
+							<field name="relationship" required="1" />
+							<field name="birth" on_change="onchange_birth(birth)"
+								context="{'age': age}" />
+							<field name="age" />
+                            <field name="type_id" />
+                            <field name="identification_id" attrs="{'required': ['|',('type_id','=','id'),('type_id','=','passport')]}"/>
+							<field name="sex" />
+						</group>
+						<group>
+							<field name="disabled" />
+                            <field name="disabled_type" attrs="{'invisible': [('disabled','=',False)]}"/>
+                            <field name="disabled_percent" attrs="{'invisible': [('disabled','=',False)], 'required': [('disabled','=',True)]}"/>
+                            <field name="disabled_id" attrs="{'invisible': [('disabled','=',False)]}"/>
+							<field name="tutela" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_employee_modified_form">
+			<field name="name">hr.employee.modified.form</field>
+			<field name="model">hr.employee</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="hr.view_employee_form" />
+			<field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page[@string='Personal Information']/group/group[@string='Status']/field[@name='marital']" position="after">
+                    <field name="disabled"/>
+                    <field name="disabled_type" attrs="{'invisible': [('disabled','=',False)]}"/>
+                    <field name="disabled_percent" attrs="{'invisible': [('disabled','=',False)], 'required': [('disabled','=',True)]}"/>
+                    <field name="disabled_id" attrs="{'invisible': [('disabled','=',False)]}"/>
+                </xpath>
+				<notebook position="inside">
+					<page string="Family Members">
+						<group string="Utilities, Family Members" col="6" colspan="4">
+							<field name="utilities_charges" />
+						</group>
+						<field name="family_item_ids" nolabel="1" colspan="4" />
+					</page>
+				</notebook>
+			</field>
+		</record>
+	</data>
+</openerp>
